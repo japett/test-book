@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Member;
 
 class AuthController extends Controller
 {
@@ -55,5 +56,24 @@ class AuthController extends Controller
         return back()->withErrors([
             'error' => 'Invalid crendetials.',
         ]);
+    }
+
+    public function membership(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:225',
+            'phone' => 'required|string|max:14',
+            'domicile' => 'required|string|max:255',
+        ]);
+
+        $member_id = 'M-' . uniqid();
+
+        Member::create([
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'domicile' => $request->domicile,
+        ]);
+
+        return redirect()->route('login')->with('succes', 'Registration succesful. Your Member ID is: ' . $member_id);
     }
 }

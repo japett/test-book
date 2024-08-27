@@ -31,8 +31,12 @@ Route::post('/booking/store', [BookingController::class, 'store'])->name('bookin
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 
+Route::post('/memberships', [AuthController::class, 'membership'])->name('memberRegister');;
+
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
+
+
 
 
 

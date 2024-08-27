@@ -33,6 +33,6 @@ class BookingController extends Controller
     
 
         $message = "Nama: " . $booking->name . "\nNo Telp: " . $booking->phone . "\nDomisili:" . $booking->domicile . "\nWaktu/Jam:" . $booking->time . "\nTanggal:" . $booking->date;
-        return redirect()->away("https://wa.me/6281514484772?text=" . urlencode("Saya ingin booking Bossqu") . urlencode("\n") . urlencode($message));
+        return redirect()->away("https://wa.me/6282124773733?text=" . urlencode("Saya ingin booking Bossqu") . urlencode("\n") . urlencode($message));
     }
 }

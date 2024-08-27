@@ -19,18 +19,18 @@
     </div>
     @endif
 
-    <form action="{{ route('register') }}" method="POST">
+    <form action="{{ route('memberRegister') }}" method="POST">
         @csrf
         <label for="nama_lengkap">Nama Lengkap:</label>
-        <input type="text" name="nama_lengkap" required>
+        <input type="text" name="name" required>
         <br><br>
 
         <label for="no_telp">No Telp:</label>
-        <input type="text" name="nama_lengkap" required>
+        <input type="number" name="phone" required>
         <br><br>
 
         <label for="alamt">Alamat:</label>
-        <textarea name="alamat" required></textarea>
+        <textarea name="domicile" required></textarea>
         <br><br>
 
         <button type="submit">Register</button>
